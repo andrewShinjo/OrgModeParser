@@ -98,7 +98,7 @@ const QStringList Attributes::drawerNames() const
     static const QStringList defaults = QStringList() << QStringLiteral("PROPERTIES");
     try {
         const QString drawersAttribute = fileAttribute(QString::fromLatin1("DRAWERS"));
-        const QStringList names = drawersAttribute.split(QRegExp(QLatin1String("\\s+")));
+        const QStringList names = drawersAttribute.split(QRegularExpression(QLatin1String("\\s+")));
         return defaults + names;
     } catch (const RuntimeException&) {
         // No drawer attribute defined:
